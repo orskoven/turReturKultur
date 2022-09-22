@@ -32,7 +32,7 @@ public class EventService implements IEventService<Event, Long> {
 
     @Override
     public Optional<Event> findById(Long aLong) {
-        return Optional.empty();
+        return eventRepository.findById(aLong);
     }
 
     @Override

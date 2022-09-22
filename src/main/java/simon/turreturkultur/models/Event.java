@@ -6,6 +6,10 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -21,6 +25,7 @@ public class Event {
     private Long id;
     private String name;
     private String venue;
+    private LocalDate date;
 
     @ManyToOne
     @JsonBackReference // undgår cirkulær forbindelse / refernce i @RestController

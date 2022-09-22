@@ -45,5 +45,8 @@ public class EventController {
         return new ResponseEntity<>(set,HttpStatus.OK);
    }
 
-
+    @GetMapping("/getEvent")
+    public ResponseEntity<Event> getEvent(@RequestParam Long eventId){
+        return new ResponseEntity<>(eventService.findById(eventId).orElse(new Event()),HttpStatus.OK);
+    }
 }
